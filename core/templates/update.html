@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Editando...</title>
+    <style>
+        .form-margin{
+            margin-bottom: 8px;
+        }
+        body{
+            background-color: rgb(196, 194, 194);
+        }
+        a{
+            color: red;
+        }
+    </style>
+</head>
+<body>
+    <h3>Editando - {{pessoa.id}} - {{pessoa.nome}}</h3>
+<form action="{% url 'update' pessoa.id %}" method="post">
+    {% csrf_token %}
+    <input class="form-margin" type="text" name="nome" value="{{pessoa.nome}}" placeholder="Altere o nome"><br>
+    <input class="form-margin"type="text" name="idade" value="{{pessoa.idade}}" placeholder="Altere a idade"><br>
+    <button type="submit">Salvar</button> - <a class="button" href="{%url 'delete' pessoa.id %}">Deletar</a>
+</form>
+</form>
+</body>
+</html>

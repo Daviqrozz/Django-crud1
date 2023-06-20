@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        body{
+            background-color: rgb(196, 194, 194);
+        }
+        .text-center{
+            text-align: center;
+        }
+        .form-margin{
+            margin-bottom: 8px;
+        }
+        .p-no-margin{
+            margin-bottom: 0px;
+        }
+    </style>
+</head>
+<body>
+    <h2>Pessoas cadastradas no banco de dados:</h2>
+    <a href="http://127.0.0.1:8000/admin" target="_blank">Pagina do ADMIN</a>
+    {% for pessoa in pessoas %}
+    <p>{{pessoa.id}} - Nome:  {{pessoa.nome}} - {{pessoa.idade}} anos /<a href="{% url 'editar' pessoa.id %}">Editar</a>
+    {% endfor %}</p>
+
+    <h3>Cadastrar nova pessoa:</h3>
+    <form action="{% url 'salvar' %}" method="post">
+        {% csrf_token %}
+        <label for="nomeinput">Nome:</label>
+        <br>
+        <input class="form-margin" type="text" name="nome" placeholder="Nome" id="nomeinput">
+        <br>
+        <label for="idadeinput">Idade:</label>
+        <br>
+        <input class="form-margin" type="text" name="idade" placeholder="Idade" id="idadeinput">
+        <br>
+        <button  type="submit">Salvar</button>
+    </form>
+</body>
+</html>
