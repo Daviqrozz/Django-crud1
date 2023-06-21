@@ -5,6 +5,9 @@ def home(request):
     pessoas = Pessoa.objects.all()
     return render(request,"index.html",{'pessoas':pessoas})
 
+def cadastro(request):
+    pessoas = Pessoa.objects.all()
+    return render(request, 'cadastro.html',{'pessoas':pessoas})
 
 def salvar(request):
     nome = request.POST.get("nome")
