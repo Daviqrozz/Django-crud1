@@ -21,10 +21,21 @@
 </head>
 <body>
     <h2>Pessoas cadastradas no banco de dados:</h2>
-    <a href="http://127.0.0.1:8000/admin" target="_blank">Pagina do ADMIN</a>
+<table border="1">
+    <tr>
+        <td>Nome</td>
+        <td>Idade</td>
+    </tr>
     {% for pessoa in pessoas %}
-    <p>{{pessoa.id}} - Nome:  {{pessoa.nome}} - {{pessoa.idade}} anos /<a href="{% url 'editar' pessoa.id %}">Editar</a>
-    {% endfor %}</p>
-    <a href="{% url 'cadastro'%}">Cadastrar nova pessoa</a>
+    <tr>
+        <td><a title="Editar usuario" href="{% url 'editar' pessoa.id %}">{{ pessoa.nome }}</a></td>
+        <td>{{ pessoa.idade }}</td>
+    </tr>
+    {% endfor %}
+</table>
+
+<p>
+    <a  href="{% url 'cadastro'%}">Cadastrar nova pessoa</a>
+</p>    
 </body>
 </html>
