@@ -1,22 +1,29 @@
+{% load static %}
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="{% static 'css/loginstyle.css' %}">
     <title>Autenticando</title>
 </head>
+
 <body>
-    <h2>Login</h2>
-    <p>Digite suas credenciais de administrador</p>
-    <form method="post">
-        {% csrf_token %}
-        <label for="username">Username:</label>
-        <input type="text" name="username" id="username" required>
-        <br>
-        <label for="password">Password:</label>
-        <input type="password" name="password" id="password" required>
-        <br>
-        <input type="submit" value="Login">
-    </form>
+    <div class="login-box">
+        <h2>Login</h2>
+        <p>Digite suas credenciais de administrador</p>
+        <form method="post">
+            {% csrf_token %}
+            <label for="username">Nome</label>
+            <input type="text" name="username" id="username" required>
+            <br>
+            <label for="password">Senha</label>
+            <input type="password" name="password" id="password" required>
+            <br>
+            <input type="submit" value="Login" class="button">
+        </form>
+    </div>
 </body>
+
 </html>

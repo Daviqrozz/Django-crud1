@@ -1,41 +1,24 @@
+{% load static %}
 <!DOCTYPE html>
 <html lang="en">
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="{% static 'css/updatestyle.css'%}">
     <title>Editando...</title>
-    <style>
-        .form-margin{
-            margin-bottom: 8px;
-        }
-        .form{
 
-        }
-        .container{
-            display: flex;
-            justify-content: center;
-            align-items: center;
-            height: 100vh; 
-        }
-        body{
-            background-color: rgb(196, 194, 194);
-        }
-        .link{
-            color: red;
-        }
-    </style>
 </head>
 <body>
-    <div class="container">
+    <div class="form-box">
     
 <form class="form" action="{% url 'update' pessoa.id %}" method="post">
     <h3>Editando usuario: <br> {{pessoa.nome}}</h3>
     {% csrf_token %}
     <label for="inputnome">Nome:</label> <br>
-    <input id="inputnome" class="form-margin" type="text" name="nome" value="{{pessoa.nome}}" placeholder="Altere o nome"><br>
+    <input id="inputnome" class="form-input" type="text" name="nome" value="{{pessoa.nome}}" placeholder="Altere o nome"><br>
     <label for="inputidade">Idade:</label> <br>
-    <input id="inputidade" class="form-margin"type="text" name="idade" value="{{pessoa.idade}}" placeholder="Altere a idade"><br>
-    <button type="submit">Salvar</button> - <a class="link" href="{%url 'delete' pessoa.id %}">Deletar</a> - <a href="..">Voltar</a>
+    <input id="inputidade" class="form-input"type="text" name="idade" value="{{pessoa.idade}}" placeholder="Altere a idade"><br>
+    <button class="button" type="submit">Salvar</button> - <a class="button-delete" href="{%url 'delete' pessoa.id %}">Deletar</a> - <a href="..">Voltar</a>
 </form>
     </div>
 </body>

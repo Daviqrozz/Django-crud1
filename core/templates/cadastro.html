@@ -1,36 +1,27 @@
+{% load static %}
 <!DOCTYPE html>
 <html lang="en">
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="{% static 'css/cadastrostyle.css' %}">
     <title>Document</title>
-    <style>
-        .container{
-            display: flex;
-            justify-content: center;
-            align-items: center;
-            height: 100vh; 
-        }
-        body{
-            background-color: rgb(196, 194, 194);
-        }
-    </style>
 </head>
 <body>
-    <div class="container">
+    <div class="form-box">
         
     <form action="{% url 'salvar' %}" method="post">
         <h3>Cadastrando novo usuario:</h3>
         {% csrf_token %}
-        <label for="nomeinput">Nome:</label>
+        <label for="nomeinput">Nome</label>
         <br>
-        <input class="form-margin" type="text" name="nome" placeholder="Nome" id="nomeinput">
+        <input class="form-input" type="text" name="nome" id="nomeinput">
         <br>
-        <label for="idadeinput">Idade:</label>
+        <label for="idadeinput">Idade</label>
         <br>
-        <input class="form-margin" type="text" name="idade" placeholder="Idade" id="idadeinput">
+        <input class="form-input" type="text" name="idade"  id="idadeinput">
         <br>
-        <button  type="submit">Salvar</button> - <a href="..">Voltar</a>
+        <button class="button" type="submit">Salvar</button> - <a href="{% url 'home' %}">Cancelar</a>
     </form>
 </div>
 </body>
