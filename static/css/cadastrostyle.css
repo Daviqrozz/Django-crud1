@@ -1,6 +1,7 @@
 html {
     height: 100%;
 }
+
 body {
     margin: 0;
     padding: 0;
@@ -8,9 +9,11 @@ body {
     background: linear-gradient(#141e30, #243b55);
     color: #fff;
 }
+
 a {
     color: #fff;
 }
+
 .form-box {
     position: absolute;
     top: 50%;
@@ -23,21 +26,24 @@ a {
     box-shadow: 0 15px 25px rgba(0, 0, 0, .6);
     border-radius: 10px;
 }
-.login-box h3,
+
+.form-box h3,
 p {
     margin: 0 0 30px;
     padding: 0;
     color: #fff;
     text-align: center;
 }
-.form-input{
+
+.form-input {
     width: 100%;
     border: 0;
     border-radius: 3px;
     padding: 0.2em;
     margin-bottom: 0.4em;
 }
-.button{
+
+.button {
     background-color: #5cb85c;
     text-decoration: none;
     padding: 0.3em;
@@ -49,6 +55,15 @@ p {
     font-weight: 550;
     height: 100%;
 }
-.button:hover{
+
+.button:hover {
     background: #27ae60;
+}
+
+/* Responsividade */
+@media screen and (max-width: 600px) {
+    .form-box {
+        width: 90%;
+        padding: 20px;
+    }
 }

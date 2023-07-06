@@ -1,6 +1,7 @@
 html {
     height: 100%;
 }
+
 body {
     margin: 0;
     padding: 0;
@@ -8,15 +9,19 @@ body {
     background: linear-gradient(#141e30, #243b55);
     color: #fff;
 }
+
 a {
     color: #fff;
 }
-.editar{
-     text-decoration: none;
+
+.editar {
+    text-decoration: none;
 }
-.editar:hover{
+
+.editar:hover {
     padding: 2px;
 }
+
 .adicionar {
     background-color: #5cb85c;
     text-decoration: none;
@@ -24,11 +29,12 @@ a {
     border-radius: 3.5px;
     display: inline-block;
     border: none;
-    
-}   
-.adicionar:hover{
+}
+
+.adicionar:hover {
     background: #27ae60;
 }
+
 .container {
     position: absolute;
     top: 50%;
@@ -42,11 +48,26 @@ a {
     box-shadow: 0 15px 25px rgba(0, 0, 0, .6);
     border-radius: 10px;
 }
-table{
-    padding:0em;
+
+table {
+    padding: 0em;
     width: 35%;
 }
-.table_titulo{
+
+.table_titulo {
     text-align: center;
     font-weight: 600;
+}
+
+/* Responsividade */
+@media screen and (max-width: 600px) {
+    .container {
+        width: 90%;
+        height: auto;
+        padding: 20px;
+    }
+
+    table {
+        width: 100%;
+    }
 }

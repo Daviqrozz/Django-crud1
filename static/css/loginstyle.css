@@ -50,3 +50,10 @@ label {
     border: 1px solid white;
     font-family: sans-serif;
 }
+/* Responsividade */
+@media screen and (max-width: 768px) {
+    .login-box {
+        width: 60%;
+        padding: 20px;
+    }
+}
