@@ -11,10 +11,12 @@ def login_view(request):
             login(request, user)
             return redirect('home')
         else:
-            error_message = "Invalid username or password."
-            return render(request, 'login.html', {'error_message': error_message})
+            error_message = "Nome ou senha incorretos!"
+            context = {'error_message': error_message}
+            return render(request, 'login.html', context)
     else:
         return render(request, 'login.html')
+
 
 def home(request):
     pessoas = Pessoa.objects.all()
