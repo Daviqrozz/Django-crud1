@@ -1,0 +1,33 @@
+{%load static%}
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="{% static 'css/indexstyle.css'%}">
+    <title>Document</title>
+</head>
+
+<body>
+    <div class="container">
+        <h2>Pessoas cadastradas no banco de dados:</h2>
+        <table border="1">
+            <tr>
+                <td class="table_titulo">Nome</td>
+                <td class="table_titulo">Idade</td>
+            </tr>
+            {% for pessoa in pessoas %}
+            <tr>
+                <td><a class="editar" title="Editar usuario" href="{% url 'editar' pessoa.id %}">{{ pessoa.nome }}</a></td>
+                <td>{{ pessoa.idade }} anos</td>
+            </tr>
+            {% endfor %}
+        </table>
+
+        <p>
+            <a class="adicionar" href="{% url 'cadastro'%}">Adicionar</a>
+        </p>
+    </div>
+</body>
+
+</html>
